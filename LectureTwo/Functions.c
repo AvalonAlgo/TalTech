@@ -25,34 +25,23 @@ void whichCharacter() {
 
 	gets_s(inArr, 81);
 
-	// digit check
-	for (int i = 48; i <= 57; i++) {
-		if (inArr[0] == i) {
-			printf("Text starts with digit");
+	if (inArr[0] >= 48 && inArr[0] <= 57) {
+		printf("Text starts with digit\n");
 
-			return;
-		}
+		return;
+	}
+	else if (inArr[0] >= 65 && inArr[0] <= 90) {
+		printf("Text starts with capital letter\n");
+
+		return;
+	}
+	else if (inArr[0] >= 97 && inArr[0] <= 122) {
+		printf("Text starts with lowercase letter\n");
+
+		return;
 	}
 
-	// Capital letter check
-	for (int i = 65; i <= 90; i++) {
-		if (inArr[0] == i) {
-			printf("Text starts with capital letter");
-
-			return;
-		}
-	}
-
-	// Lowercase letter check
-	for (int i = 97; i <= 122; i++) {
-		if (inArr[0] == i) {
-			printf("Text starts with lowercase letter");
-
-			return;
-		}
-	}
-
-	printf("The text starts with unidentified character");
+	printf("The text starts with unidentified character\n");
 
 	return;
 }
